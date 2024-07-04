@@ -2,20 +2,6 @@ import CreateAdmin from "@/pages/admin/CreateAdmin";
 import CreateFaculty from "@/pages/admin/CreateFaculty";
 import CreateStudent from "@/pages/admin/CreateStudent";
 import DashBoard from "@/pages/admin/DashBoard";
-import { ReactNode } from "react";
-import { NavLink } from "react-router-dom";
-
-// type TRoute = {
-//     path: string;
-//     element: ReactNode;
-// };
-
-type TSidebarItem = {
-    key: string;
-    label: ReactNode;
-    children?: TSidebarItem[];
-};
-
  
 export const adminPath = [
     {
@@ -45,30 +31,30 @@ export const adminPath = [
     },
 ]
 
-export const adminSidebarItems = adminPath.reduce(
-    (acc: TSidebarItem[], item) => {
-        if (item.path && item.name) {
-            acc.push({
-                key: item.name,
-                label: <NavLink to={`/admin/${item.path}`}>{item.name}</NavLink>,
-            });
-        }
+// export const adminSidebarItems = adminPath.reduce(
+//     (acc: TSidebarItem[], item) => {
+//         if (item.path && item.name) {
+//             acc.push({
+//                 key: item.name,
+//                 label: <NavLink to={`/admin/${item.path}`}>{item.name}</NavLink>,
+//             });
+//         }
 
-        if (item.children) {
-            acc.push({
-                key: item.name,
-                label: item.name,
-                children: item.children.map((child) => ({
-                    key: child.name,
-                    label: <NavLink to={`/admin/${child.path}`}>{child.name}</NavLink>,
-                })),
-            });
-        }
+//         if (item.children) {
+//             acc.push({
+//                 key: item.name,
+//                 label: item.name,
+//                 children: item.children.map((child) => ({
+//                     key: child.name,
+//                     label: <NavLink to={`/admin/${child.path}`}>{child.name}</NavLink>,
+//                 })),
+//             });
+//         }
 
-        return acc;
-    },
-    []
-);
+//         return acc;
+//     },
+//     []
+// );
 
 // export const adminRoutes = adminPath.reduce((acc: TRoute[], item) => {
 //     if (item.path && item.element) {

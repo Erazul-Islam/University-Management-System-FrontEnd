@@ -1,5 +1,6 @@
 import './App.css'
 import Mainlayout from './components/layouts/Mainlayout'
+import ProtectedRoute from './components/layouts/ProtectedRoute'
 
 function App() {
 
@@ -8,7 +9,9 @@ function App() {
   return (
 
     <div>
-      <Mainlayout></Mainlayout>
+      <ProtectedRoute>
+        <Mainlayout></Mainlayout>
+      </ProtectedRoute>
     </div>
   )
 }
